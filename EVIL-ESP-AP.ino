@@ -8,9 +8,9 @@ int option;
 IPAddress apIP(8,8,4,4); // The default android DNS
 DNSServer dnsServer;
 WiFiServer server(80);
-
+int LED=33
 void setup() { 
-pinMode(LED_BUILTIN,OUTPUT);
+pinMode(LED,OUTPUT);
 WiFi.mode(WIFI_AP);
 Serial.begin(9600);// initialize serial:
 
@@ -49,9 +49,9 @@ switch (int(option)) {
   break;
 }
   for (int n = 0; n < 5; n++) {
-  digitalWrite(LED_BUILTIN,HIGH);
+  digitalWrite(LED,HIGH);
   delay(100);
-  digitalWrite(LED_BUILTIN,LOW);
+  digitalWrite(LED,LOW);
   delay(100);
   }
   
