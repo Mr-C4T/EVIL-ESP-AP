@@ -8,7 +8,7 @@ int option;
 IPAddress apIP(8,8,4,4); // The default android DNS
 DNSServer dnsServer;
 WiFiServer server(80);
-int LED=33
+int LED=33;
 void setup() { 
 pinMode(LED,OUTPUT);
 WiFi.mode(WIFI_AP);
