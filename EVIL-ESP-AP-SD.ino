@@ -69,11 +69,12 @@ void loop() {
           }
         } else if (c != '\r') {
           currentLine += c;
-        }else if (c == '\r')  {
+        }else if (c == '\r')  {          
+          
+          Serial.println(currentLine);
           if (currentLine.startsWith("GET /generate_204?email")) {
           appendFile(SD_MMC, "/data.txt",currentLine.c_str());
           appendFile(SD_MMC, "/data.txt", "/\n");
-          Serial.println(currentLine);
           digitalWrite(LED,HIGH);
           delay(50);
           digitalWrite(LED,LOW);
