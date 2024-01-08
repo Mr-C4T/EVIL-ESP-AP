@@ -72,13 +72,13 @@ void loop() {
         }else if (c == '\r')  {          
           
           Serial.println(currentLine);
-          if (currentLine.startsWith("GET /generate_204?email")) {
-          appendFile(SD_MMC, "/data.txt",currentLine.c_str());
-          appendFile(SD_MMC, "/data.txt", "/\n");
-          digitalWrite(LED,HIGH);
-          delay(50);
-          digitalWrite(LED,LOW);
-          delay(50);
+          if (currentLine.indexOf("?email=") != -1) {
+            appendFile(SD_MMC, "/data.txt",currentLine.c_str());
+            appendFile(SD_MMC, "/data.txt", "/\n");
+            digitalWrite(LED,HIGH);
+            delay(50);
+            digitalWrite(LED,LOW);
+            delay(50);
         }}
 
       }
